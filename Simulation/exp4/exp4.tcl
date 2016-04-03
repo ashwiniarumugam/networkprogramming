@@ -1,9 +1,13 @@
 #Create a simulator object
 set ns [new Simulator]
 
-#Open a trace file
+#Open a Namtrace file
 set nf [open out.nam w]
 $ns namtrace-all $nf
+
+#Open a new file to log TRACE
+set tf [open out.tr w]
+$ns trace-all $tf
 
 #Define a 'finish' procedure
 proc finish {} {
@@ -11,6 +15,7 @@ proc finish {} {
         $ns flush-trace
         close $nf
         exec nam out.nam &
+        exec awk -f exp4.awk out.tr &
         exit 0
 }
 
