@@ -21,10 +21,10 @@ int main () {
   for(i=0; i<strlen(msg); i++) ct[i] = mult(pt[i], e,n);
   for(i=0; i<strlen(msg); i++) printf("%d ", ct[i]);
   printf("\nDecrypting...");
+  for(i=0; i<strlen(msg); i++)
+  pt[i] = mult(ct[i], d,n) ;
   printf("\nPT = ");
   for(i=0; i<strlen(msg); i++)
   printf("%c", pt[i]);
-  for(i=0; i<strlen(msg); i++)
-  pt[i] = mult(ct[i], d,n) ;
   return 0;
 }
