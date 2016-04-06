@@ -60,7 +60,7 @@ int main()
                 for(j=0;j<n;j++)
                 if(fr[j].flag==i)
                 {
-                      printf("%d\t%s",i,j,fr[j].sno,fr[j].msg);
+                      printf("%d\t%s",fr[j].sno,fr[j].msg);
                 printf("\n");
                 }
 
