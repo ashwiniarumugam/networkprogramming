@@ -12,7 +12,7 @@ struct frame
 };
 int main()
 {
-    int i,j,n,r;
+    int i,j,n,r,k;
     printf("enter no of frames\n");
     scanf("%d",&n);
     struct frame fr[n];
@@ -32,13 +32,27 @@ int main()
     }
      for(j=0;j<n;j++)
     {
+
         r=rand()%n;
         if(s[r]==-1)
         {
             fr[j].flag=r;
             s[r]=1;
         }
+        else if(s[r]==1)
+        {
+            for(k=0;k<n;k++){
+                r=k;
+                if(s[r]==-1)
+        {
+            fr[j].flag=r;
+            s[r]=1;
+            break;
+        }
+            }
+        }
     }
+
         printf("arrived frame are:\n");
         printf("\n sno \t msg  \n");
         for(i=0;i<n;i++)
@@ -46,7 +60,7 @@ int main()
                 for(j=0;j<n;j++)
                 if(fr[j].flag==i)
                 {
-                      printf("%d\t%s",fr[j].sno,fr[j].msg);
+                      printf("%d\t%s",i,j,fr[j].sno,fr[j].msg);
                 printf("\n");
                 }
 

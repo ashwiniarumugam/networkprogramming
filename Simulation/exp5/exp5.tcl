@@ -15,7 +15,7 @@ proc finish {} {
         close $nf
 	close $tf
         exec nam out.nam &
-     #   exec awk -f exp5.awk out.tr &
+        exec awk -f exp5.awk out.tr &
         exit 0
 }
 
